@@ -16,3 +16,9 @@ RUN curl -O http://download.redis.io/releases/redis-2.6.16.tar.gz
 
 # Untar redis source
 RUN tar zxvf redis-2.6.16.tar.gz
+
+# Build redis
+RUN cd redis-2.6.16 && make
+
+# Install redis
+RUN cd redis-2.6.16 && make install
