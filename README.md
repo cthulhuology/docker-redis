@@ -24,4 +24,3 @@ If you'd like to expose port 6379 to the world
 
 	docker run -p 6379:6379 -d -t redis
 
-
