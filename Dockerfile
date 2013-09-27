@@ -1,6 +1,6 @@
 # docker-redis
 #
-# VERSION 0.1
+# VERSION 0.2
 
 FROM centos
 MAINTAINER Dave Goehrig dave@dloh.org
@@ -22,3 +22,12 @@ RUN cd redis-2.6.16 && make
 
 # Install redis
 RUN cd redis-2.6.16 && make install
+
+# Cleanup
+RUN rm -rf redis-2.6.16.tar.gz redis-2.6.16
+
+# expose port
+EXPOSE 6379
+
+# Run redis
+CMD /usr/local/bin/redis-server
